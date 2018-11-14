@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="myLoginApp.js"></script>
+    </head>
+    <body ng-app="myLoginApp" ng-controller="loginController">
+        {{test}}
+        <h2>Login Here</h2>
+
+        <form name="myForm">
+			<p>
+        		<input type="text" name="user" placeholder="User Name" ng-model="input.user" ng-pattern="/^[A-Za-z]+$/">
+            	<!-- when $scope.myValue is truthy (element is hidden) -->
+				<!--<div ng-hide="myValue" class="ng-hide"></div>	-->
+				<span style="color:red" ng-modal="userRequiredMessage" ng-hide="userRequiredMessage" class="ng-hide">Username is required.</span>
+			</p>
+
+			<p>
+        		<input type="text" name="email" placeholder="your_email@gmail.com" ng-model="input.email" ng-pattern="/^[A-Za-z]+$/">
+            	<!-- when $scope.myValue is truthy (element is hidden) -->
+				<!--<div ng-hide="myValue" class="ng-hide"></div>	-->
+				<span style="color:red" ng-modal="userRequiredMessage" ng-hide="userRequiredMessage" class="ng-hide">Email address is required.</span>
+
+            </p>
+
+            <p>
+            <button ng-click="verifyInputs()">Submit</button>
+            </p>
+
+        </form>
+
+    </body>
+</html>
