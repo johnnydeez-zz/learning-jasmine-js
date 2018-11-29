@@ -12,7 +12,7 @@ app.controller("loginController", ['$scope', function($scope){
     $scope.validEmail = true;
 
 
-    var validateEmail = function(value) {
+    $scope.validateEmail = function(value) {
         if (value.indexOf("@") > -1) {
             return true;
         }else{
@@ -31,7 +31,7 @@ app.controller("loginController", ['$scope', function($scope){
 			$scope.userRequiredMessage = false;
 		}
 
-        if (validateEmail($scope.input.email) == false) {
+        if ($scope.validateEmail($scope.input.email) == false) {
             $scope.validEmail = false;
             alert("Email address is not valid. Please use a valid email address");
         }
